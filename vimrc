@@ -1,5 +1,5 @@
 set nocompatible " iMproved mode (redundant because it should be set by vim when
-		 " .vimrc is found
+		 " .vimrc is found)
 set path+=** " help for tab-completion
 
 " === Plugin's === "
@@ -31,12 +31,10 @@ set showmatch " highlight matching [{()}]
 set ruler " shows position of cursor in bottom line
 set smartindent
 syntax enable
-
+set mouse=c " if you want a to use a mouse, use an other editor
 " === Searching === "
 set incsearch " search as characters are entered
 set hlsearch " highlight matches
-" turn  off search highlight hotkey
-nnoremap <leader><space> :nohlsearch<CR>
 
 " === GUI Settings === "
 if has ("gui_running")
@@ -46,9 +44,14 @@ if has ("gui_running")
     set guioptions-=T "remove toolbar
     set guioptions-=r "remove right-hand scroll bar
     set guioptions-=L "remove left-hand scroll bar
-    set guifont=InputMono:h9:cANSI:qDRAFT
+    set guifont=Source_Code_Pro:h11:cANSI:qDRAFT
 endif
 
 " === Keybindings ==="
 map <F8> :TagbarToggle<CR>
 map <F9> :NERDTreeToggle<CR>
+map <F7> :let &background = ( &background == "dark"? "light" : "dark")<CR>
+map <F6> :let &mouse = ( &mouse == "c"? "a" : "c" )<CR>
+map <F5> :source ~\.vimrc<CR>
+" shortcut to clear last search highlighting
+nnoremap <leader><space> :nohlsearch<CR>
