@@ -1,6 +1,16 @@
-set nocompatible " iMproved mode (redundant because it should be set by vim when
-		 " .vimrc is found)
+" iMproved mode (redundant because it should be set by vim when .vimrc is found
+set nocompatible
+
 set path+=** " help for tab-completion
+
+set autoread " read file changes from other programs automatically
+set autowrite " write before executing commands
+set backspace=2 " behaviour of backspace in insert mode as expectet from other
+		" editors
+
+" === Encoding === "
+set encoding=utf-8
+"set fileencoding=utf-8
 
 " === Plugin's === "
 filetype off
@@ -10,28 +20,39 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 filetype plugin indent on
 
+" === Airline Configuration === "
+let g:airline#extensions#tabline#enabled = 1
 " === Spaces & Tabs === "
 set tabstop=8 " number of visual spaces per TAB
 set softtabstop=8 " number of spaces in tab when editing
 " set expandtab " tabs are spaces
 
 " === Line Wrapping === "
-match WarningMsg '\%>80v.\+' " mark all chars that exceed collumn 80
+"match WarningMsg '\%>80v.\+' " mark all chars that exceed collumn 80
+set textwidth=80
+set colorcolumn=+1 " shows a vertical line to determine lines longer than 80 characters
 
 " === UI Config === "
 set number " show line numbers
 set cursorline " highligh current line
 set showmode " shows the current mode
+
 set wildmenu " visual autocomplete for command menu
-set lazyredraw " redraw only when we need to
+" set lazyredraw " redraw only when we need to, deactivated because of some
+" ugly artifacts
 set showmatch " highlight matching [{()}]
 set ruler " shows position of cursor in bottom line
-set smartindent
+" set smartindent " auto indenting when opening a new line has some issues
+" when indentation is not wanted
 syntax enable
 set mouse=c " if you want a to use a mouse, use an other editor
+set laststatus=2 " always show status line
 " === Searching === "
 set incsearch " search as characters are entered
 set hlsearch " highlight matches
@@ -54,4 +75,4 @@ map <F7> :let &background = ( &background == "dark"? "light" : "dark")<CR>
 map <F6> :let &mouse = ( &mouse == "c"? "a" : "c" )<CR>
 map <F5> :source ~\.vimrc<CR>
 " shortcut to clear last search highlighting
-nnoremap <leader><space> :nohlsearch<CR>
+map <F4> :nohlsearch<CR>
