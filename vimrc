@@ -16,14 +16,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 filetype plugin indent on
 
 " === Airline Configuration === "
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 "=== Editor ====================================================================
 set autoread
@@ -37,6 +36,7 @@ set encoding=utf-8
 
 set path+=**
 
+set lazyredraw
 syntax enable
 
 set tabstop=8
@@ -70,7 +70,11 @@ if has ("gui_running")
 	set guioptions-=T
 	set guioptions-=r
 	set guioptions-=L
-	set guifont=Source_Code_Pro:h11:cANSI:qDRAFT
+	if has("gui_win32")
+		set guifont=Source_Code_Pro:h11:cANSI:qDRAFT
+	else
+		set guifont=DejaVu\ Sans\ Mono\ 10
+	endif
 endif
 
 "=== Keybindings ===============================================================
