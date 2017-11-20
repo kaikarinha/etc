@@ -16,13 +16,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 
 " === Airline Configuration === "
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 "=== Editor ====================================================================
 set autoread
@@ -51,16 +52,18 @@ set colorcolumn=+1
 
 set number
 set cursorline
-set ruler
-set showmode
+"set ruler
+set noshowmode
 
 set wildmenu
 set showmatch
 
 set mouse=c
-set laststatus=2
+"set laststatus=2
 set incsearch
 set hlsearch
+
+set spelllang=de
 
 "=== GUI Settings ==============================================================
 if has ("gui_running")
@@ -84,3 +87,4 @@ map <F7> :let &background = ( &background == "dark"? "light" : "dark")<CR>
 map <F6> :let &mouse = ( &mouse == "c"? "a" : "c" )<CR>
 map <F5> :source ~\.vimrc<CR>
 map <F4> :nohlsearch<CR>
+map <F3> :set spell!<CR>
