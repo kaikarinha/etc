@@ -74,7 +74,7 @@ if has ("gui_running")
 	set guioptions-=r
 	set guioptions-=L
 	if has("gui_win32")
-		set guifont=Source_Code_Pro:h11:cANSI:qDRAFT
+		set guifont=Consolas:h12:cANSI:qDRAFT
 	else
 		set guifont=DejaVu\ Sans\ Mono\ 10
 	endif
