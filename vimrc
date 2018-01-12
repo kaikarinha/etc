@@ -40,8 +40,9 @@ set path+=**
 set lazyredraw
 syntax enable
 
-set tabstop=8
-set softtabstop=8
+set expandtab
+set shiftwidth=4
+set softtabstop=4
 
 set backspace=2
 
