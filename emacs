@@ -44,6 +44,8 @@
 (setq org-clock-into-drawer t)
 (setq org-latex-create-formula-image-program 'dvipng)
 
+(setq org-todo-keywords
+      '((sequence "TODO" "NEXT" "WAIT" "PROJ" "|" "DONE")))
 ;; Agenda-Files
 ;; ============
 (setq org-agenda-files (quote ("d:/org/")))

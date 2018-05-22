@@ -19,6 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 call vundle#end()
 filetype plugin indent on
 
