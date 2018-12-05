@@ -48,7 +48,7 @@
       '((sequence "TODO" "NEXT" "WAIT" "PROJ" "|" "DONE")))
 ;; Agenda-Files
 ;; ============
-(setq org-agenda-files (quote ("d:/org/")))
+(setq org-agenda-files (quote ("~/org/")))
 
 (setq org-agenda-custom-commands
       '(("O" "Custom overwiew"
@@ -64,19 +64,3 @@
 ;; Global tags
 ;; ===========
 (setq org-tag-alist '(("failed" . ?f) ("correct" . ?c)))
-
-;; ====================
-;; custom-set-variables
-;; ====================
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (leuven))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
