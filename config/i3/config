@@ -132,8 +132,13 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
+#move workspaces
+bindsym $mod+x move workspace to output right
+
 assign [class="Rhythmbox"] $workspace10
-assign [class="Spotify"] $workspace10
+#assign [class="Spotify"] $workspace10 # does not work at the moment, so using
+# workaround below...
+for_window [class="Spotify"] move to workspace $workspace10
 assign [class="Quodlibet"] $workspace10
 assign [class="VirtualBox"] $workspace9
 
@@ -207,11 +212,18 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # Media player controls
 # may not work because of missing playerctl
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Screenshots
+bindsym Control+Print exec gnome-screenshot -i
+
 exec --no-startup-id dropbox start
 exec_always synclient TouchpadOff=1
+exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
+
+# Happy Holydays...
+exec xsnow
+
